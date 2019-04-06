@@ -38,8 +38,21 @@ void ListProxies() {
     for(const auto &entry : fs::directory_iterator(poxyPath)) proxies.push_back(entry.path());
 }
 
+typedef int(__stdcall *f_postAttach)();
+
 void LoadProxies() {
-    for(auto proxy : proxies) LoadLibrary(proxy.c_str());
+    for(const auto &proxy : proxies) {
+        const auto hres = LoadLibrary(proxy.c_str());
+
+        if(!hres) {
+            MBox(L"Failed to load lib", L"Error");
+        }
+
+        const auto postAttach = reinterpret_cast<f_postAttach>(GetProcAddress(hres, "postAttach"));
+        if(postAttach) {
+            postAttach();
+        }
+    }
 }
 
 
