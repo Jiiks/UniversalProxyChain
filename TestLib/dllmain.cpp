@@ -1,8 +1,8 @@
-// dllmain.cpp : Defines the entry point for the DLL application.
-#include "pch.h"
-
-void MBox(LPCWSTR msg, LPCWSTR caption) {
-    MessageBox(0, msg, caption, MB_OK);
+extern "C" {
+    int __declspec(dllexport) __stdcall postAttach() {
+        // Do whatever post attach
+        return 0;
+    }
 }
 
 BOOL APIENTRY DllMain( HMODULE hModule,
@@ -10,15 +10,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
                        LPVOID lpReserved
                      )
 {
-    switch (ul_reason_for_call)
-    {
-    case DLL_PROCESS_ATTACH:
-        MBox(L"Test Lib", L"Test Lib");
-    case DLL_THREAD_ATTACH:
-    case DLL_THREAD_DETACH:
-    case DLL_PROCESS_DETACH:
-        break;
-    }
     return TRUE;
 }
 
