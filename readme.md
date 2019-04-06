@@ -12,3 +12,5 @@ extern "C" {
     }
 }
 ```
+
+Example [https://github.com/Jiiks/UniversalProxyChain/blob/master/TestLib/dllmain.cpp](https://github.com/Jiiks/UniversalProxyChain/blob/master/TestLib/dllmain.cpp)
