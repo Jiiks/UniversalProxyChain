@@ -14,3 +14,5 @@ extern "C" {
 ```
 
 Example [https://github.com/Jiiks/UniversalProxyChain/blob/master/TestLib/dllmain.cpp](https://github.com/Jiiks/UniversalProxyChain/blob/master/TestLib/dllmain.cpp)
+
+Another example [https://github.com/Jiiks/Sekiro-Stuff/blob/master/NoLogo.cpp](https://github.com/Jiiks/Sekiro-Stuff/blob/master/NoLogo.cpp)
