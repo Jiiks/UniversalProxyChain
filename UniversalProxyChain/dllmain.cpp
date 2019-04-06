@@ -5,7 +5,7 @@
 
 namespace fs = std::experimental::filesystem;
 
-const std::string poxyPath = "proxies";
+const std::string poxyPath = "uclib";
 std::vector<std::experimental::filesystem::path> proxies;
 
 void MBox(const LPCWSTR msg, const LPCWSTR caption) {
